@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/foodMainFragment">
+    <fragment
+        android:id="@+id/foodMainFragment"
+        android:name="com.example.foodapp.ui.fragment.FoodMainFragment"
+        android:label="fragment_food_main"
+        tools:layout="@layout/fragment_food_main">
+        <action
+            android:id="@+id/mainToCartGecis"
+            app:destination="@id/foodCartFragment" />
+        <action
+            android:id="@+id/gecis2"
+            app:destination="@id/detail2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodCartFragment"
+        android:name="com.example.foodapp.ui.fragment.FoodCartFragment"
+        android:label="fragment_food_cart"
+        tools:layout="@layout/fragment_food_cart" >
+        <action
+            android:id="@+id/foodCartToCart"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail2Fragment"
+        android:name="com.example.foodapp.ui.fragment.Detail2Fragment"
+        android:label="Detail2Fragment"
+        tools:layout="@layout/fragment_detail2" >>
+        <argument
+            android:name="detailYemek"
+            app:argType="com.example.foodapp.data.entities.Yemekler" />
+        <action
+            android:id="@+id/detailToCardGecis"
+            app:destination="@id/foodCartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.foodapp.ui.fragment.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />/>
+</navigation>
+
+
