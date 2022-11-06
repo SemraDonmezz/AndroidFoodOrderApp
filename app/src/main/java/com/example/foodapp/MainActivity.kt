@@ -23,15 +23,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tasarim:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-//        val navController = findNavController(R.id.bottomNavigation)
-//        setupBottomNavMenu(navController)
-
-//        loadFragment(FoodMainFragment())
-//        bottomNav = findViewById(R.id.bottomNavigation) as BottomNavigationView
-//        bottomNav.setOnNavi
-//        }
+        tasarim=ActivitiyMainBinding.inflate(layoutInflater)
+        setContentView(tasarim.root)
 
 //        tasarim.bottomNavigation.setOnItemSelectedListener{
 //            when(it.itemId){
@@ -41,21 +34,6 @@ class MainActivity : AppCompatActivity() {
 //            true
 //        }
     }
-//    private fun setupBottomNavMenu(navController: NavController) {
-//        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
-//        bottomNav?.setupWithNavController(navController)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return item.onNavDestinationSelected(findNavController(R.id.bottomNavigation)) || super.onOptionsItemSelected(item)
-//    }
-//
-//    private fun loadFragment(fragment: Fragment){
-//        val transaction = supportFragmentManager.beginTransaction()
-//        transaction.replace(com.google.android.material.R.id.container,fragment)
-//        transaction.addToBackStack(null)
-//        transaction.commit()
-//    }
     fun sayfaGec(fragment:Fragment){
         val fragmentManager=supportFragmentManager.beginTransaction()
        fragmentManager.replace(R.id.fragment_host,fragment)
